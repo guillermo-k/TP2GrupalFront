@@ -1,17 +1,149 @@
-// Trabajo Práctico Grupal 2
-// Instrucciones
-// • La entrega debe hacerse subiendo a la plataforma el link de la app deployada. Basta con un simple index.html
-// que tenga asociado un archivo js como main.js .
-// • El index bastará con que tenga un par de etiquetas de encabezado con el nombre del grupo y debajo Trabajo
-// Práctico Obligatorio 2.
-// • Los resultados deben mostrarse por consola, imprimiendo por consola Solucion X: y abajo la solucion mostrada por
-// consola. Se deben separar las soluciones con espacios y también poniendo separadores como /////////////// o
-// ______________, separaciones y espacios que podremos poner en console.log() .
-// • En cada ejercicio tienen un ejemplo de la salida que debe producir. Por tanto deben incluír tres ejemplos en cada
-// función que hagan para demostrar que funciona con tres ejemplos distintos.
-// • Deben escribir en un comentario multilinea /* */ al término de su ejercicio, su proceso de pensamiento y cómo
-// abordaron ese ejercicio, es decir, escribir un par de párrafos acerca de cómo pensaron la consigna y cómo idearon
-// la solución.
+const ej1 = document.querySelector(".ejercicio1")
+const ej2 = document.querySelector(".ejercicio2")
+const ej3 = document.querySelector(".ejercicio3")
+const ej4 = document.querySelector(".ejercicio4")
+const ej5 = document.querySelector(".ejercicio5")
+const ej6 = document.querySelector(".ejercicio6")
+const ej7 = document.querySelector(".ejercicio7")
+
+/* IMPORTACION DE TODOS LOS BOTONES */
+const buttons = document.querySelectorAll("button")
+
+/* LISTENERs DE LOS BOTONES Y Y LLAMADA A LAS FUNCIONES CORRESPONDIENTES */
+buttons.forEach(button=> {
+    button.addEventListener("click", ()=>{
+        switch (button.id) {
+            case "p1":
+                ejercicio1();
+                break;
+            case "p2":
+                ejercicio2();
+                break;
+            case "p3":
+                ejercicio3();
+                break;
+            case "p4":
+                ejercicio4();
+                break;
+            case "p5":
+                ejercicio5();
+                break;
+            case "p6":
+                ejercicio6();
+                break;
+            case "p7":
+                ejercicio7();
+                break;
+            
+            default:
+                break;
+        }
+    })
+});
+
+
+function ejercicio1(){
+    const frase = ej1.querySelector("input").value
+    const parrafo = ej1.querySelector(".resultado")
+    const texto = `La frase "${frase}" tiene ${contarVocales(frase)} vocales`
+
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log("Resultados del ejercicio 1:")
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
+
+function ejercicio2(){
+    const array = ej2.querySelector("input").value.split(/,\s*/)
+    array.map(element=>{Number(element.trim())})
+    const parrafo = ej2.querySelector(".resultado")
+    const texto = `El mayor numero del array [${array}] es ${maxNum(array)}`
+
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log("Resultados del ejercicio 2:")
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
+function ejercicio3(){
+    let array2 = (ej3.querySelector("input").value.split(/,\s*/))
+    const array =[]
+    array2.forEach(element=>{if(element == Number(element)){array.push(Number(element))}})
+    const parrafo = ej3.querySelector(".resultado")
+    const texto = `La media del array [${array}] es ${calcularMedia(array)}`
+
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log("Resultados del ejercicio 3:")
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
+function ejercicio4(){
+    let array = (ej4.querySelector("input").value.split(/,\s*/))
+    const parrafo = ej4.querySelector(".resultado")
+    const texto = `El array [${array}] invertido es [${invertirArray(array)}]`
+
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log("Resultados del ejercicio 4:")
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
+function ejercicio5(){
+    let array = (ej5.querySelector("input").value.split(/,\s*/))
+    const parrafo = ej5.querySelector(".resultado")
+    const texto = `El array [${array}] sin duplicados es [${eliminarDuplicados(array)}]`
+
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log("Resultados del ejercicio 5:")
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
+function ejercicio6(){
+    const frase = ej6.querySelector("input").value
+    const parrafo = ej6.querySelector(".resultado")
+    const texto = `La frase "${frase}" capitalizada es ${capitalizarPalabras(frase)}`
+
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log("Resultados del ejercicio 6:")
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
+function ejercicio7(){
+    const cantidad = ej7.querySelector("input").value
+    const parrafo = ej7.querySelector(".resultado")
+    const texto = `Los primeros "${cantidad}" números de la sucesión de Fibonacci son ${fibonacci(cantidad)} `
+
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log("Resultados del ejercicio 7:")
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
 
 
 // 1. Contar vocales en una cadena
@@ -21,12 +153,14 @@ function contarVocales(frase) {
     const vocales = ["a","e","i","o","u","á","é","í","ó","ú","ä","ë","ï","ö","ü","à","è","ì","ò","ù"];
     let contador = 0;
     for (let index = 0; index < frase.length; index++) {        
-        if(vocales.includes(frase[index])){
+        if(vocales.includes(frase[index].toLowerCase())){
             contador++;
         }
     }
     return contador
 }
+console.log("------------------------------------------------")
+console.log("Ejemplos de muestra ejercicio 1:")
 console.log(contarVocales("Guillermo"))
 console.log(contarVocales("Soledad"))
 console.log(contarVocales("Carolina"))
@@ -53,6 +187,8 @@ function maxNum(arrayNumeros) {
     });
     return mayor;
 }
+console.log("------------------------------------------------")
+console.log("Ejemplos de muestra ejercicio 2:")
 console.log(maxNum([1, 2, 3, 4, 5, 8, 6, 3, 3, 2, 9, 1, 6, 7, 8]));
 console.log(maxNum([9, 4, 5, 8,  7, 8]));
 console.log(maxNum([14, 5, 8, 6, 3, 3, 2, 9]));
@@ -71,6 +207,8 @@ console.log(maxNum([14, 5, 8, 6, 3, 3, 2, 9]));
 function calcularMedia(arrayNumeros) {
     return arrayNumeros.reduce((a,b)=> a + b)/arrayNumeros.length
 }
+console.log("------------------------------------------------")
+console.log("Ejemplos de muestra ejercicio 3:")
 console.log(calcularMedia([0, 20, 300, 450]));
 console.log(calcularMedia([1, 220, 300, 40]));
 console.log(calcularMedia([10, 20, 3000, 45]));
@@ -87,6 +225,8 @@ console.log(calcularMedia([10, 20, 3000, 45]));
 function invertirArray(arrayNumeros) {
     return arrayNumeros.reverse()
 }
+console.log("------------------------------------------------")
+console.log("Ejemplos de muestra ejercicio 4:")
 console.log(invertirArray([100, 20, 300, 40]));
 console.log(invertirArray([140, 205, 300, 450]));
 console.log(invertirArray([10, 20, 330, 4]));
@@ -103,6 +243,8 @@ console.log(invertirArray([10, 20, 330, 4]));
 function eliminarDuplicados(array) {
     return Array.from(new Set(array))
 }
+console.log("------------------------------------------------")
+console.log("Ejemplos de muestra ejercicio 5:")
 console.log(eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]));
 console.log(eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]));
 console.log(eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]));
@@ -121,6 +263,8 @@ function capitalizarPalabras(frase) {
         return palabra[0].toUpperCase() + palabra.substr(1,palabra.length-1);
     }).join(" ");
 }
+console.log("------------------------------------------------")
+console.log("Ejemplos de muestra ejercicio 6:")
 console.log(capitalizarPalabras("hola mundo desde javascript"));
 console.log(capitalizarPalabras("hola muNdo desde javascript"));
 console.log(capitalizarPalabras("hola mundo desde javaSCRIPT"));
@@ -149,6 +293,8 @@ function fibonacci(cant) {
     }
     return array
 }
+console.log("------------------------------------------------")
+console.log("Ejemplos de muestra ejercicio 7:")
 console.log(fibonacci(9))
 console.log(fibonacci(19))
 console.log(fibonacci(1))
