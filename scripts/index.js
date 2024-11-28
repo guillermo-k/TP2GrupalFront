@@ -41,20 +41,30 @@ buttons.forEach(button=> {
     })
 });
 
-
+function mostrar(párrafo, texto, ejercicio){
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    parrafo.textContent = texto;
+    
+    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    console.log(`Resultados del ejercicio ${ejercicio}:`)
+    console.log(texto)
+    console.log("------------------------------------------------")
+    console.log("")
+}
 function ejercicio1(){
     const frase = ej1.querySelector("input").value
     const parrafo = ej1.querySelector(".resultado")
     const texto = `La frase "${frase}" tiene ${contarVocales(frase)} vocales`
 
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
+    mostrar(párrafo, texto, 1)
+    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO 
     parrafo.textContent = texto;
     
-    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
+    IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
     console.log("Resultados del ejercicio 1:")
     console.log(texto)
     console.log("------------------------------------------------")
-    console.log("")
+    console.log("")*/
 }
 
 function ejercicio2(){
