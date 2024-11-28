@@ -151,10 +151,10 @@ function contarVocales(frase) {
 }
 console.log("------------------------------------------------");
 console.log("Ejemplos de muestra ejercicio 1:");
-console.log(contarVocales("Guillermo"));
-console.log(contarVocales("Soledad"));
-console.log(contarVocales("Carolina"));
-console.log(contarVocales("German"));
+console.log("Guillermo contiene", contarVocales("Guillermo"), "vocales");
+console.log("Soledad contiene", contarVocales("Soledad"), "vocales");
+console.log("Carolina contiene", contarVocales("Carolina"), "vocales");
+console.log("Germán contiene", contarVocales("Germán"), "vocales");
 /* 
 -creamos una constante con las vocales
 -creamos una variable para contar las vocales que vaya encontrando
@@ -185,9 +185,9 @@ function maxNum(arrayNumeros) {
 }
 console.log("------------------------------------------------");
 console.log("Ejemplos de muestra ejercicio 2:");
-console.log(maxNum([1, 2, 3, 4, 5, 8, 6, 3, 3, 2, 9, 1, 6, 7, 8]));
-console.log(maxNum([9, 4, 5, 8, 7, 8]));
-console.log(maxNum([14, 5, 8, 6, 3, 3, 2, 9]));
+console.log("el mayor número de [1, 2, 3, 4, 5, 8, 6, 3, 3, 2, 9, 1, 6, 7, 8] es", maxNum([1, 2, 3, 4, 5, 8, 6, 3, 3, 2, 9, 1, 6, 7, 8]));
+console.log("el mayor número de [9, 4, 5, 8, 7, 8] es", maxNum([9, 4, 5, 8, 7, 8]));
+console.log("el mayor número de [14, 5, 8, 6, 3, 3, 2, 9] es", maxNum([14, 5, 8, 6, 3, 3, 2, 9]));
 /* 
 -creamos una variable que guarda el primer valor del array de numeros que ingresamos
 -recorremos el array y verificamos si el elemento contenido en la siguiente posicion es mayor al valor guardado en la variable
@@ -203,9 +203,9 @@ function calcularMedia(arrayNumeros) {
 }
 console.log("------------------------------------------------");
 console.log("Ejemplos de muestra ejercicio 3:");
-console.log(calcularMedia([0, 20, 300, 450]));
-console.log(calcularMedia([1, 220, 300, 40]));
-console.log(calcularMedia([10, 20, 3000, 45]));
+console.log("La media de [0, 20, 300, 450] es:", calcularMedia([0, 20, 300, 450]));
+console.log("La media de [1, 220, 300, 40] es:", calcularMedia([1, 220, 300, 40]));
+console.log("La media de [10, 20, 3000, 45] es:", calcularMedia([10, 20, 3000, 45]));
 /*
 -creamos una funcion que recibe un array de numeros por parametro
 -devolvemos el array reducido sumando el primer elemento (acumulado) al siguiente dividido por el largo del array
@@ -219,9 +219,9 @@ function invertirArray(arrayNumeros) {
 }
 console.log("------------------------------------------------");
 console.log("Ejemplos de muestra ejercicio 4:");
-console.log(invertirArray([100, 20, 300, 40]));
-console.log(invertirArray([140, 205, 300, 450]));
-console.log(invertirArray([10, 20, 330, 4]));
+console.log("[100, 20, 300, 40] invertido queda:", invertirArray([100, 20, 300, 40]));
+console.log("[140, 205, 300, 450] invertido queda:", invertirArray([140, 205, 300, 450]));
+console.log("[10, 20, 330, 4] invertido queda:", invertirArray([10, 20, 330, 4]));
 /*
 -creamos una funcion que recibe un array de numeros por parametro
 -devolvemos el array invertido con la funcion .reverse()
@@ -234,10 +234,10 @@ function eliminarDuplicados(array) {
   return Array.from(new Set(array));
 }
 console.log("------------------------------------------------");
-console.log("Ejemplos de muestra ejercicio 5:");
-console.log(eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]));
-console.log(eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]));
-console.log(eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]));
+console.log("Ejemplos de muestra ejercicio 5:")
+console.log("[1, 2, 2, 3, 4, 4, 5] sin duplicados queda: ", eliminarDuplicados([1, 2, 2, 3, 4, 4, 5]));
+console.log('["a", "a", "a", "b", "c"] sin duplicados queda: ', eliminarDuplicados(["a", "a", "a", "b", "c"]));
+console.log("[45, 56, 45, 78, 45, 98] sin duplicados queda: ", eliminarDuplicados([45, 56, 45, 78, 45, 98]));
 /*
 -creamos una funcion que recibe un array de numeros por parametro
 -primero, lo convertimos en set para eliminar los duplicados, 
@@ -260,9 +260,9 @@ function capitalizarPalabras(frase) {
 
 console.log("------------------------------------------------");
 console.log("Ejemplos de muestra ejercicio 6:");
-console.log(capitalizarPalabras("hola mundo desde javascript"));
-console.log(capitalizarPalabras("hola muNdo desde javascript"));
-console.log(capitalizarPalabras("hola mundo desde javaSCRIPT"));
+console.log("'hola muNdo desde javascript' capitalizado es:", capitalizarPalabras("hola muNdo desde javascript"));
+console.log("'hola mundo desde javaSCRIPT' capitalizado es:", capitalizarPalabras("hola mundo desde javaSCRIPT"));
+console.log("'hola mundo desde javascript' capitalizado es:", capitalizarPalabras("hola mundo desde javascript"));
 /*
 -creamos una funcion que recibe una frase por parametro
 -devolvemos la frase normalizada a minusculas, luego la separamos por espacios, y concatenamos la primer letra pasada a mayuscula con el resto de la palabra como substring, y luego la volvemos a unir
@@ -290,9 +290,9 @@ function fibonacci(cant) {
 }
 console.log("------------------------------------------------");
 console.log("Ejemplos de muestra ejercicio 7:");
-console.log(fibonacci(9));
-console.log(fibonacci(19));
-console.log(fibonacci(1));
+console.log("Los primeros 9 números de la secuencia de Fibonacci son:", fibonacci(9));
+console.log("Los primeros 19 números de la secuencia de Fibonacci son:", fibonacci(19));
+console.log("Los primeros 2 números de la secuencia de Fibonacci son:", fibonacci(2));
 /*
 -creamos una funcion que recibe un numero
 -si el numero es menor a 1, no podemos crear una lista de modo que se devuelve ese mensaje
