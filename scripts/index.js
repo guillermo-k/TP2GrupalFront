@@ -41,7 +41,7 @@ buttons.forEach(button=> {
     })
 });
 
-function mostrar(párrafo, texto, ejercicio){
+function mostrar(parrafo, texto, ejercicio){
     /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
     parrafo.textContent = texto;
     
@@ -56,15 +56,8 @@ function ejercicio1(){
     const parrafo = ej1.querySelector(".resultado")
     const texto = `La frase "${frase}" tiene ${contarVocales(frase)} vocales`
 
-    mostrar(párrafo, texto, 1)
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO 
-    parrafo.textContent = texto;
+    mostrar(parrafo, texto, 1)
     
-    IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
-    console.log("Resultados del ejercicio 1:")
-    console.log(texto)
-    console.log("------------------------------------------------")
-    console.log("")*/
 }
 
 function ejercicio2(){
@@ -73,14 +66,8 @@ function ejercicio2(){
     const parrafo = ej2.querySelector(".resultado")
     const texto = `El mayor numero del array [${array}] es ${maxNum(array)}`
 
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
-    parrafo.textContent = texto;
-    
-    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
-    console.log("Resultados del ejercicio 2:")
-    console.log(texto)
-    console.log("------------------------------------------------")
-    console.log("")
+    mostrar(parrafo, texto, 2)
+
 }
 function ejercicio3(){
     let array2 = (ej3.querySelector("input").value.split(/,\s*/))
@@ -89,70 +76,37 @@ function ejercicio3(){
     const parrafo = ej3.querySelector(".resultado")
     const texto = `La media del array [${array}] es ${calcularMedia(array)}`
 
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
-    parrafo.textContent = texto;
-    
-    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
-    console.log("Resultados del ejercicio 3:")
-    console.log(texto)
-    console.log("------------------------------------------------")
-    console.log("")
+    mostrar(parrafo, texto, 3)
+
 }
 function ejercicio4(){
     let array = (ej4.querySelector("input").value.split(/,\s*/))
     const parrafo = ej4.querySelector(".resultado")
     const texto = `El array [${array}] invertido es [${invertirArray(array)}]`
+    mostrar(parrafo, texto, 4)
 
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
-    parrafo.textContent = texto;
-    
-    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
-    console.log("Resultados del ejercicio 4:")
-    console.log(texto)
-    console.log("------------------------------------------------")
-    console.log("")
 }
 function ejercicio5(){
     let array = (ej5.querySelector("input").value.split(/,\s*/))
     const parrafo = ej5.querySelector(".resultado")
     const texto = `El array [${array}] sin duplicados es [${eliminarDuplicados(array)}]`
+    mostrar(parrafo, texto, 5)
 
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
-    parrafo.textContent = texto;
-    
-    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
-    console.log("Resultados del ejercicio 5:")
-    console.log(texto)
-    console.log("------------------------------------------------")
-    console.log("")
 }
 function ejercicio6(){
     const frase = ej6.querySelector("input").value
     const parrafo = ej6.querySelector(".resultado")
     const texto = `La frase "${frase}" capitalizada es ${capitalizarPalabras(frase)}`
+    mostrar(parrafo, texto, 6)
 
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
-    parrafo.textContent = texto;
-    
-    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
-    console.log("Resultados del ejercicio 6:")
-    console.log(texto)
-    console.log("------------------------------------------------")
-    console.log("")
 }
 function ejercicio7(){
     const cantidad = ej7.querySelector("input").value
     const parrafo = ej7.querySelector(".resultado")
     const texto = `Los primeros "${cantidad}" números de la sucesión de Fibonacci son ${fibonacci(cantidad)} `
 
-    /* INSERCIÓN DE LA RESPUESTA EN EL DOCUMENTO */
-    parrafo.textContent = texto;
-    
-    /* IMPRESIÓN DE LA RESPUESTA POR CONSOLA */
-    console.log("Resultados del ejercicio 7:")
-    console.log(texto)
-    console.log("------------------------------------------------")
-    console.log("")
+    mostrar(parrafo, texto, 7)
+
 }
 
 
