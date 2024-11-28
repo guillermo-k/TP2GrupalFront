@@ -1,76 +1,103 @@
-:root{
-    --background-color:#EAE8FF;
-    --container-color:#FFE4F2;
+:root {
+    --background-color: #EAE8FF;
+    --container-color: #FFE4F2;
     --main-color: #0f27ff57;
-    --shadow-color: #7A87FF57;
+    --shadow-color: rgba(122, 135, 255, 0.341);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: "Nunito", sans-serif;
     text-align: center;
     text-decoration: none;
     scroll-behavior: smooth;
-    font-weight: bold;  
+    font-weight: bold;
+    color: var(--main-color);
 }
-body{
+
+body {
     background-color: var(--background-color);
     display: flex;
     justify-content: center;
 }
-main {
+
+.container {
     background-color: var(--container-color);
-    width: 80vw;
-    margin: 6vh 0;
+    width: 70vw;
+    margin: 5rem 0;
     border-radius: 20px;
-    padding: 3vh 0;
-}
-h2 {
-    color: var(--main-color);
-    margin: 5vh 1vw;
-}
-form {
+    padding: 4rem 0;
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    margin: 5vh 0;
     align-items: center;
 }
-input {
-    margin: 1vh 0;
-    border-radius: 10px;
-    border: 2px solid var(--background-color);  
-    font-size: 1rem;
-    width: 70vw;
-    color: var(--shadow-color);
-    padding: 0.2rem 0;
+
+h1 {
+    font-size: 3rem;
+    color: #0f27ff85;
+
 }
+
+h2 {
+    color: var(--main-color);
+    margin-block: 1rem;
+    font-size: 2rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    width: 70%;
+    /* width: 60%; */
+    align-items: center;
+    border-top: 2px solid var(--main-color);
+    padding-top: 2rem;
+}
+
+h3 {
+    color: #0f27ff85;
+    margin-bottom: .5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+span {
+    margin-top: .5rem;
+}
+
+input {
+    /* margin: 1vh 0; */
+    border-radius: 10px;
+    border: 2px solid var(--background-color);
+    font-size: 1rem;
+    width: 20vw;
+    color: rgba(122, 135, 255, 0.87);
+    padding: .6rem 0;
+    margin-bottom: 1rem;
+}
+
 ::placeholder {
     color: var(--shadow-color);
 }
-button{
+
+button {
     color: white;
-    width: fit-content;
+    width: 10rem;
     padding: 0.5rem;
-    margin-top: 3vh;
+    margin-left: 1rem;
     border-radius: 30px;
-    border: 2px var(--shadow-color) solid;  
+    border: 2px var(--shadow-color) solid;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bolder;
     background-color: var(--shadow-color);
 }
-button:hover{
+
+button:hover {
     background-color: var(--main-color);
-}
-hr{
-    height: 2px;
-    background-color: var(--shadow-color);
-    margin: 10vh 20vw;
-    border: none;
-}
-footer{
-    color: var(--main-color);
-    font-size: 1.7rem;
-    font-weight: 400;
-    margin: 6vh 0 3vh 0;
 }
