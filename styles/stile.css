@@ -1,0 +1,76 @@
+:root{
+    --background-color:#EAE8FF;
+    --container-color:#FFE4F2;
+    --main-color: #0f27ff57;
+    --shadow-color: #7A87FF57;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-weight: bold;  
+}
+body{
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+}
+main {
+    background-color: var(--container-color);
+    width: 80vw;
+    margin: 6vh 0;
+    border-radius: 20px;
+    padding: 3vh 0;
+}
+h2 {
+    color: var(--main-color);
+    margin: 5vh 1vw;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh 0;
+    align-items: center;
+}
+input {
+    margin: 1vh 0;
+    border-radius: 10px;
+    border: 2px solid var(--background-color);  
+    font-size: 1rem;
+    width: 70vw;
+    color: var(--shadow-color);
+    padding: 0.2rem 0;
+}
+::placeholder {
+    color: var(--shadow-color);
+}
+button{
+    color: white;
+    width: fit-content;
+    padding: 0.5rem;
+    margin-top: 3vh;
+    border-radius: 30px;
+    border: 2px var(--shadow-color) solid;  
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: var(--shadow-color);
+}
+button:hover{
+    background-color: var(--main-color);
+}
+hr{
+    height: 2px;
+    background-color: var(--shadow-color);
+    margin: 10vh 20vw;
+    border: none;
+}
+footer{
+    color: var(--main-color);
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: 6vh 0 3vh 0;
+}
