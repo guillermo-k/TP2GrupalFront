@@ -181,9 +181,15 @@ console.log(contarVocales("German"))
 // maxNum(arrayNumeros); // 9
 function maxNum(arrayNumeros) {
     // return Math.max(...arrayNumeros)
-    let mayor = arrayNumeros[0]
+    let mayor;
+    arrayNumeros.forEach(element=>{
+        if(element == Number(element)){
+            mayor = element;
+            return;
+        }
+    })
     arrayNumeros.forEach(element => {
-        if(element>mayor){mayor = element}
+        if(element>mayor && element == Number(element)){mayor = element}
     });
     return mayor;
 }
